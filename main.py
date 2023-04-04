@@ -40,6 +40,10 @@ def get_private_videos_from_channel():
             if next_page_token is None:
                 break
 
+        # Wypisanie tytułów i linków do filmów na konsoli
+        for title, video_id in videos:
+            print(f"{title}: https://www.youtube.com/watch?v={video_id}")
+
         return videos
 
     except HttpError as e:
